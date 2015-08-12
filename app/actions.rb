@@ -1,4 +1,5 @@
 # Homepage (Root path)
+
 helpers do
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -8,7 +9,15 @@ helpers do
   end
 end
 
-get '/' do
+get '/', '/index', '/home','/main' do
+  unless current_user
+    @user = User.new(
+      username: params[:username],
+      email: params[:email],
+      password: params[:password]
+    )
+    session[:user_id] = @user.id if @user.save
+  end
   erb :index
 end
 
