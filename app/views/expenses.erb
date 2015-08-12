@@ -1,0 +1,13 @@
+<div><h1>My Expenses<h1><div>
+
+<!-- Add custom expense field here-->
+<form action="post" method="/expenses/add">
+
+    <% if @expenses %>
+      <% @expenses.each do |expense| %>
+      <form action="post" method="/expenses/delete/%expense.id%">
+        <!--    expense.name | expense.value | expense. interval <<<<=========== use these parameters -->
+      </form>
+    <%end%>
+  <%end%>
+</form>
