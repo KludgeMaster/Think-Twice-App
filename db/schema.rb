@@ -19,5 +19,4 @@ ActiveRecord::Schema.define(version: 20150812223810) do
     t.integer "value"
     t.string  "interval"
   end
-
 end
