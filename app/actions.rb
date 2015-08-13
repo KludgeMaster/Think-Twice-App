@@ -1,16 +1,24 @@
 # Homepage (Root path)
-helpers do
-  def current_user
-    @user = User.find(session[:user_id]) if session[:user_id]
-  end
-end
+# helpers do
+#   def current_user
+#     @user = User.find(session[:user_id]) if session[:user_id]
+#   end
+# end
 
 get '/', '/index', '/home','/main' do
-  unless current_user
-    @user = User.find(1)
-    session[:user_id] = @user.id
-  end
   erb :'home'
+end
+
+get '/login' do
+  @user = User.find(1)
+  session[user_id] = @user.id
+  redirect :'home'
+end
+
+get '/logout' do
+  @user = nil
+  session.destory
+  redirect :'home'
 end
 
 get '/expenses' do
@@ -30,7 +38,6 @@ post '/expenses/add' do
 end
 
 post '/expenses/delete/:id' do
-  binding.pry
   Expense.find(params[:id]).destroy
   redirect '/expenses'
 end
