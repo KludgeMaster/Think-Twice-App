@@ -1,6 +1,6 @@
 # Homepage (Root path)
 get '/' do
-  erb :index
+  erb :home
 end
 
 get '/users/results/' do
