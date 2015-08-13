@@ -4,9 +4,6 @@ helpers do
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
   end
-  def all_songs
-    @songs = Song.all
-  end
 end
 
 get '/', '/index', '/home','/main' do
@@ -22,7 +19,7 @@ get '/', '/index', '/home','/main' do
 end
 
 get '/expenses' do
-  @expenses = Expense.find_by(user: current_user)
+  # @expenses = Expense.find_by(user: current_user)
   erb :expenses
 end
 
