@@ -30,7 +30,6 @@ post '/expenses/add' do
 end
 
 post '/expenses/delete/:id' do
-  binding.pry
   Expense.find(params[:id]).destroy
   redirect '/expenses'
 end
