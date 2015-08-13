@@ -11,6 +11,10 @@
     <title></title>
   </head>
   <body>
-    <%= yield %>
+    <%= erb :'header' %>
+      <div id = "tt-container">
+        <%= yield %>
+      </div>
+    <%= erb :'footer' %>
   </body>
 </html>
