@@ -43,7 +43,7 @@ html, body{
 #footer{
   border-top: 4px solid #7887AB;
   width: 100%;
-  height: 100px;
+  height: 15px;
 }
 
 .footer-item{
@@ -91,3 +91,36 @@ html, body{
 .nav-btn.btn-default{
   border-width: 2px;
   border-color: #162955;
+}
+
+.progress {
+   background: rgba(212, 181, 78, 1); 
+   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+   border: 2px solid rgba(10, 9, 9, 1); 
+   border-radius: 11px; 
+   height: 37px;
+   width: 70%;
+   margin-left: 45px;
+   color: black;
+   font-size: 16px;
+ }
+
+#pb {
+ background: rgba(14, 173, 27, 1); 
+ background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
+ background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
+ color: black;
+ font-size: 16px;
+}
+
+#button {
+ background: rgba(212, 181, 78, 1); 
+ background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+ background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+ border: 2px solid rgba(10, 9, 9, 1); 
+ border-radius: 11px; 
+ height: 37px;
+ color: black;
+ font-size: 16px;
+}
