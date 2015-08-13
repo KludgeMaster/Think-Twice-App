@@ -7,41 +7,45 @@ end
 
 get '/', '/index', '/home','/main' do
   unless current_user
-    @user = User.new(
-      username: params[:username],
-      email: params[:email],
-      password: params[:password]
-    )
-    session[:user_id] = @user.id if @user.save
+    @user = User.find(1)
+    session[:user_id] = @user.id
   end
-  erb :index
+  erb :'home'
 end
 
 get '/expenses' do
-  # @expenses = Expense.find_by(user: current_user)
+  @expenses = Expense.where(user_id: 1)
   erb :expenses
 end
 
-post '/input' do
-  if input.is_i? && input > 0
-    redirect '/result'
-  else
-    redirect '/'
-  end
-end
-
-
-post 'expenses/add' do
-  @expense = Expenses.new(
+post '/expenses/add' do
+  @expense = Expense.new(
+    user_id: 1,
     name: params[:name],
-    value: params[:value],
+    value: params[:value].to_i,
     interval: params[:interval]
   )
   @expense.save
   redirect '/expenses'
 end
 
-post 'expenses/delete/:id' do
-  Expenses.find(:id).destroy
+post '/expenses/delete/:id' do
+  binding.pry
+  Expense.find(params[:id]).destroy
   redirect '/expenses'
+end
+
+
+get 'result' do
+
+end
+
+post '/think-twice/' do
+  @expenses = Expense.where(user_id: 1)
+  if params[:amount].to_i > 0
+    @tt = params[:amount]
+    erb :'/user/results'
+  else
+    redirect '/'
+  end
 end

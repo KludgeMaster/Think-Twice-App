@@ -9,7 +9,7 @@
  -->
 
 <h2>Expenses</h2>
-<form action="post" method="/expenses/add" class="form-horizontal">
+<form action="/expenses/add" method="post" class="form-horizontal">
   <div class="form-group">
     <label for="inputExpenseName" class="col-sm-2 control-label">Expense</label>
     <div class="col-sm-10">
@@ -53,8 +53,11 @@
         <td><%=expense.name%></td>
         <td><%=expense.value%></td>
         <td><%=expense.interval%></td>
-        <form action="post" method="/expenses/delete/%expense.id%">
-        <td><button type="submit" class="btn btn-danger">Delete an expense</button></td>
+        
+        <td>
+        <form action="/expenses/delete/<%=expense.id%>" method="post">  
+        <input type="submit" class="btn btn-danger" value = "Delete an expense"></input>
+        </td>
         </form>
       </tr>
     </tbody>

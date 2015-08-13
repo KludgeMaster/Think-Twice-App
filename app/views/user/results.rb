@@ -1,17 +1,17 @@
 require 'pry'
 MIN_PERCENT = 5
 
-tt = 50.00
+tt = 50.to_f
 value = 10.to_f
 interval = 'monthly'
 
-result = tt*100/value
+result = tt * 100 / value
 times = nil
 intervals = [365, 30, 14, 7, 1]
 
 if result >= MIN_PERCENT
   if result > 100
-    times = (result/100).round(2)
+    times = (result / 100).round(2)
     result = 100
   end 
 else
@@ -39,7 +39,7 @@ else
       interval = 'once'
     end
   else
-    result = tt/value*(1/365).round(2)
+    result = ((tt * 100) / value * (1 / 365)).round(2)
     interval = 'daily' unless interval == 'once'
   end
 end
