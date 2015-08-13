@@ -5,6 +5,10 @@ html, body{
    padding: 0;
 }
 
+#tt-container{
+  min-height: 100vh;
+}
+
 .form-container{
 /*  background-image: url("http://girlwhothinks.com/wp-content/uploads/2014/03/growth-from-money.jpg");
   background-size: 80%, 20%;
@@ -106,7 +110,7 @@ html, body{
    font-size: 16px;
  }
 
-#pb {
+.pb {
  background: rgba(14, 173, 27, 1); 
  background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
  background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
@@ -114,7 +118,7 @@ html, body{
  font-size: 16px;
 }
 
-#button {
+.button {
  background: rgba(212, 181, 78, 1); 
  background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
  background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
