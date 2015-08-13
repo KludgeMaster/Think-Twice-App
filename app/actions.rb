@@ -39,7 +39,7 @@ post '/think-twice/' do
   @expenses = Expense.where(user_id: 1)
   if params[:amount].to_i > 0
     @tt = params[:amount]
-    erb :'results'
+    erb :'/results'
   else
     redirect '/'
   end

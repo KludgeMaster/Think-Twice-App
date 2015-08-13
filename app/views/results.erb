@@ -14,7 +14,7 @@
    </div>
  </div>
 </div>
-
+<!--
 <h1>"Think Twice Amount is ..."</h1>
 <div class="progress">
  <div id= 'pb' class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
@@ -49,6 +49,26 @@
 </div>
 
 <div style="clear:both;"></div>
+
+
+<div class="progress">
+ <div id= 'pb' class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
+ aria-valuemin="0" aria-valuemax="100" style="width:5%"> 
+ </div>
+ 5% of your monthly Rent budget.
+</div>
+-->
+<% @expenses.each do |expense| %>
+  <%= think_twice_values = expense.think_twice(@tt) %>
+  <div class="progress">
+  <div id= 'pb' class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5"
+  aria-valuemin="0" aria-valuemax="100" style="width:<%= think_twice_values[0] %>%">
+  <div>
+  <%= think_twice_values[0] %>% of your <%= think_twice_values[1] %> <%= expense.name %> budget.
+  </div>
+  
+<% end %>
+
 
 <div id="footer">
  <div class="col-md-2 footer-item label label-default">
