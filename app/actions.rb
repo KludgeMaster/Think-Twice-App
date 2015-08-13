@@ -46,3 +46,7 @@ post 'expenses/delete/:id' do
   Expenses.find(:id).destroy
   redirect '/expenses'
 end
+
+get '/result' do
+  erb :result
+end
