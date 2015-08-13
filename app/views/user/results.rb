@@ -24,4 +24,4 @@ if result < MINIMUM_VIABLE_PERCENT
     break if result > MINIMUM_VIABLE_PERCENT
   end
 end
-puts result
+puts result.round(2)
