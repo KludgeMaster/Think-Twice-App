@@ -35,11 +35,6 @@ post '/expenses/delete/:id' do
   redirect '/expenses'
 end
 
-
-get 'result' do
-
-end
-
 post '/think-twice/' do
   @expenses = Expense.where(user_id: 1)
   if params[:amount].to_i > 0
