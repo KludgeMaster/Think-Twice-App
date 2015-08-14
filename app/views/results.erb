@@ -3,7 +3,7 @@
 <!-- the div with text inside needs the class col-md-03 -->
 <!-- The numbers need to add up to 10 therefore we use col 7 and 3 -->
 <% @expenses.each do |expense| %>
-  <% think_twice_values = expense.think_twice(@tt) %>
+  <% think_twice_values = get_tt_values(@tt, expense.value, expense.interval) %>
   <div class = "col-md-7">
     <div class="progress">
       <div class="progress-bar progress-bar-success pb" role="progressbar" aria-valuenow="5"
