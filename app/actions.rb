@@ -40,11 +40,13 @@ post '/expenses/add' do
   @expense = Expense.new(
     user_id: current_user.id,
     name: params[:name],
-    value: params[:value].to_i,
+    value: params[:value].to_f,
     interval: params[:interval]
   )
 
-  unless @expense.save
+  if @expense.save
+    flash[:success] = "#{@expense.name} added!"
+  else
     flash[:errors] = make_error_message(@expense.errors)
   end
   
@@ -58,7 +60,7 @@ end
 
 post '/think-twice/' do
   @expenses = Expense.where(user_id: current_user.id) if current_user
-  if params[:amount].to_i > 0
+  if params[:amount].to_f > 0
     @tt = params[:amount]
     erb :'/results'
   else
