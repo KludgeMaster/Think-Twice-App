@@ -1,21 +1,7 @@
-<div id="nav-bar">
-  <div id="profile-image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile&w=80&h=80" />
-  </div>
-  <div class="nav-btn-container">
-    <div class="nav-btn btn btn-default">
-      <span class="btn-text">
-      My Expenses
-      </span>
-    </div>
-    <div class="nav-btn btn btn-danger sign-out">
-      <span class="btn-text">
-      Sign Out
-      </span>
-    </div>
-  </div>  
-</div>
-<h3>My Expenses</h3>
-<form action="post" method="/expenses/add" class="form-horizontal">
+
+
+<h2>Expenses</h2>
+<form action="/expenses/add" method="post" class="form-horizontal">
   <div class="form-group">
     <label for="inputExpenseName" class="col-sm-2 control-label">Expense</label>
     <div class="col-sm-10">
@@ -33,13 +19,14 @@
     <div class="col-sm-10">
       <input type= "text" name= "interval" class="form-control" id="inputValue" placeholder="Interval"> 
     </div>
-  </div
+  </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">Add an expense</button>
     </div>
   </div>
 </form>
+
 <div class="container">
   <h4>Here's a list of your expenses:</h4>            
   <table class="table table-bordered">
@@ -52,19 +39,22 @@
       </tr>
     </thead>
     <tbody>
-  <% if @expenses %>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%=expense.name%></td>
-        <td><%=expense.value%></td>
-        <td><%=expense.interval%></td>
-        <form action="post" method="/expenses/delete/%expense.id%">
-        <td><button type="submit" class="btn btn-success">Delete an expense</button></td>
-        </form>
-      </tr>
-    </tbody>
+    <% if @expenses %>
+      
+      <% @expenses.each do |expense| %>
+        <tr>
+          <td><%=expense.name%></td>
+          <td><%=expense.value%></td>
+          <td><%=expense.interval%></td>
+          <td>
+            <form action="/expenses/delete/<%=expense.id%>" method="post">  
+            <input type="submit" class="btn btn-danger" value = "Delete an expense"></input>
+          </td>
+          </form>
+        </tr>
+      <%end%>
     <%end%>
-  <%end%>
+    </tbody>
   </table>
 </div>
 <div id="footer">
@@ -78,5 +68,6 @@
     Twitter
   </div>
 </div>
+
 
 
