@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812224957) do
+ActiveRecord::Schema.define(version: 20150814194633) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer "user_id"
     t.string  "name"
-    t.integer "value"
+    t.decimal "value",    precision: 7, scale: 2
     t.string  "interval"
   end
 
