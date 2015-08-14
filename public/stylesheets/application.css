@@ -11,6 +11,12 @@ html, body{
   min-height: 100vh;
 }
 
+.think-twice-values{
+  font-weight: bold;
+  font-size:15px;
+
+}
+
 .form-container{
 /*  background-image: url("http://girlwhothinks.com/wp-content/uploads/2014/03/growth-from-money.jpg");
   background-size: 80%, 20%;
