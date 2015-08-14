@@ -18,6 +18,11 @@
             <%= flash[:errors] %>
           </div>
         <% end %>
+        <% if flash[:success] %>
+          <div class="alert alert-success">
+            <%= flash[:success] %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     <%= erb :'footer' %>

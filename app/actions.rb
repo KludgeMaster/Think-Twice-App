@@ -44,7 +44,9 @@ post '/expenses/add' do
     interval: params[:interval]
   )
 
-  unless @expense.save
+  if @expense.save
+    flash[:success] = "#{@expense.name} added!"
+  else
     flash[:errors] = make_error_message(@expense.errors)
   end
   
