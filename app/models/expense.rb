@@ -4,11 +4,9 @@ class Expense < ActiveRecord::Base
   @@MIN_PERCENT = 5
   
   def think_twice(expense_tt)
-    binding.pry
     tt = expense_tt.to_f
     value = self.value.to_f
     interval = self.interval
-
     result = tt * 100 / value
     times = nil
     intervals = [365, 30, 14, 7, 1]
@@ -50,8 +48,7 @@ class Expense < ActiveRecord::Base
     if interval == 'once'
       interval = nil
     end
-    binding.pry
-    return [result, interval, times]
+    return [result.round(2), interval, times]
   end
   
 end
