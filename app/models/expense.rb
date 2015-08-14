@@ -1,8 +1,11 @@
 class Expense < ActiveRecord::Base
-  validates :name, presence: true
-  validates :value, numericality: { greater_than: 0}
+
+  validates :name, presence: true, length: {maximum: 40}
+  validates :value, numericality: {greater_than: 0, less_than: 10000000}
   @@MIN_PERCENT = 5
   
+  belongs_to :user
+
   def think_twice(expense_tt)
     tt = expense_tt.to_f
     value = self.value.to_f
@@ -50,6 +53,5 @@ class Expense < ActiveRecord::Base
       result = (tt * 100) / self.value.to_f
     end  
     return [result.round(1),interval,times]
-  end
-      
+  end 
 end
