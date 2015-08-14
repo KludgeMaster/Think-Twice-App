@@ -7,48 +7,49 @@ class Expense < ActiveRecord::Base
     tt = expense_tt.to_f
     value = self.value.to_f
     interval = self.interval
-    result = tt * 100 / value
+    result = 0
     times = nil
-    intervals = [365, 30, 14, 7, 1]
-
-    if result >= @@MIN_PERCENT
-      if result > 100
-        times = (result / 100).round(2)
-        result = 100
-      end 
-    else
-      new_result = 0
-      new_interval = nil
-      intervals.each do |i|
-        new_result = (tt * 100) / (value * (i.to_f / 365))
-        new_interval = i
-        break if new_result >= @@MIN_PERCENT
-      end
-      if new_result >= @@MIN_PERCENT
-        result = new_result
-        case new_interval
-        when 365
-          interval = 'annual'
-        when 30
-          interval = 'monthly'
-        when 14
-          interval = 'biweekly'
-        when 7
-          interval = 'weekly'
-        when 1
-          interval = 'daily' unless interval == 'once'
-        else
-          interval = nil
-        end
+    temp = {
+      annual: 365,
+      monthly: 30,
+      biweekly: 14,
+      weekly: 7,
+      daily: 1,
+      once: 1
+    }
+    daily_value = tt/(value/temp[interval.to_sym])
+    values = {
+      annual: (daily_value/365)*100,
+      monthly: (daily_value/30)*100,
+      biweekly: (daily_value/14)*100,
+      weekly: (daily_value/7)*100,
+      daily: (daily_value/1)*100,
+      # once: (daily_value/1)*100
+    }
+    values.each do |interv, percentage|
+      if percentage >= 40 && percentage <= 60
+        result = percentage
+        interval = interv
+        break
+      elsif percentage >= 25 && percentage < 40
+        result = percentage
+        interval = interv
+      elsif percentage >= 200
+        result = percentage
+        interval = interv
+      elsif percentage <25 && percentage > 10  
+        result = percentage
+        interval = interv
       else
-        result = ((tt * 100) / value * (1 / 365)).round(2)
-        interval = 'daily' unless interval == 'once'
+        result = percentage
+        interval = interv
       end
-    end
-    if interval == 'once'
-      interval = nil
-    end
-    return [result.round(2), interval, times]
+    end  
+    if self.interval == 'once'
+      interval = ""
+      result = (tt * 100) / self.value.to_f
+    end  
+    return [result.round(1),interval,times]
   end
-  
+      
 end
