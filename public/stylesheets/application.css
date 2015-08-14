@@ -6,7 +6,6 @@ html, body{
    padding: 0;
 }
 
-
 #tt-container{
   min-height: 100vh;
 }
@@ -80,37 +79,43 @@ html, body{
 }
 
 .progress {
- background: rgba(63,143,90,1); 
- background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
- background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
- border: 2px solid rgba(14, 173, 27, 1); 
- border-radius: 11px; 
- height: 37px;
- width: 70%;
- margin-left: 45px;
- color: black;
- font-size: 16px;
+   background: rgba(63,143,90,1); 
+   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+   border: 2px solid rgba(14, 173, 27, 1); 
+   border-radius: 11px; 
+   height: 37px;
+   margin-left: 45px;
+   color: black;
+   font-size: 16px;
  }
 
 .pb {
- background: rgba(14, 173, 27, 1); 
- background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
- background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
- color: black;
- font-size: 16px;
+   background: rgba(14, 173, 27, 1); 
+   background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
+   background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
+   color: black;
+   font-size: 16px;
 }
-
-
 
 .button {
   background: rgba(240, 95, 82, 1 ); 
   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-  border: 2px solid rgba(10, 9, 9, 1); 
+  border: 2px solid rgba(19, 103, 47, 1); 
   border-radius: 11px; 
   height: 37px;
-  color: black;
+  color: #02290f;
   font-size: 16px;
+}
+
+.nav-btn.btn-default a {
+  color: #FF8C00;
+}
+
+.nav-btn.btn-default test {
+  text-shadow: 0 1 px 0 #FF8C00;
+  background-color: red;
 }
 
 #pb-text {
@@ -126,23 +131,30 @@ html, body{
   margin-right:10px;
   top: 20px;
   position: relative;
-  border-color: #FFB354;
-  color: #3f8f5a;
 }
 
 .nav-btn .btn-text{
   display: inline-block;
   position: relative;
   top: 30%;
-  color: #3f8f5a;
+  color: #3F8F5A;
 }
 
 .nav-btn.btn-default{
   border-width: 2px;
-  border-color: #FFB354;
-  color: #3f8f5a
+  border-color: #FF8C00;
 }
 
 .results {
-    color: #3f8f5a;
+    color: #7887AB;
 }
+
+.table, th, td, tr {
+  border: 3px solid #FF8C00;
+  border-top: 3px solid #FF8C00;
+}
+.table-bordered, th, td, tr {
+  border: 3px solid #FF8C00;
+  border-top: 3px solid #FF8C00;
+}
+
