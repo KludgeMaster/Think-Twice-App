@@ -1,15 +1,22 @@
 <div id="nav-bar">
  <div id="profile-image"><a href="/"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=T T&w=80&h=80" /></a>
  </div>
- <div class="nav-btn-container">
+ <div class= "nav-btn-container">
+ <% if current_user %>
    <div class="nav-btn btn btn-default">
      <span class="btn-text">
+
      <a href='/expenses'>My Expenses</a>
      </span>
    </div>
+   <%end%>
    <div class="nav-btn btn btn-danger sign-out">
      <span class="btn-text">
-     Sign Out
+     <%if current_user %>
+        <a href="/logout">Sign Out</a>
+      <%else%>
+        <a href="/login">Sign In</a>
+      <%end%>
      </span>
    </div>
  </div>

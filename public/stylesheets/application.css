@@ -1,9 +1,11 @@
+
 html, body{
    height: 100%;
    width: 100%;
    margin: 0;
    padding: 0;
 }
+
 
 #tt-container{
   min-height: 100vh;
@@ -47,7 +49,8 @@ html, body{
 #footer{
   border-top: 4px solid #7887AB;
   width: 100%;
-  height: 15px;
+  height: 10px;
+  background-color: #3f8f5a;
 }
 
 .footer-item{
@@ -59,7 +62,7 @@ html, body{
 #nav-bar{
   height: 100px;
   border-bottom: 4px solid #7887AB;
-  background-color: white;
+  background-color: #3f8f5a;
   width: 100%;
 }
 
@@ -76,37 +79,17 @@ html, body{
   margin: 5px;
 }
 
-.nav-btn-container{
-  float:right;
-}
-
-.nav-btn{
-  margin-right:10px;
-  top: 20px;
-  position: relative;
-}
-
-.nav-btn .btn-text{
-  display: inline-block;
-  position: relative;
-  top: 30%;
-}
-
-.nav-btn.btn-default{
-  border-width: 2px;
-  border-color: #162955;
-}
-
 .progress {
-   background: rgba(212, 181, 78, 1); 
-   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-   border: 2px solid rgba(10, 9, 9, 1); 
-   border-radius: 11px; 
-   height: 37px;
-   margin-left: 45px;
-   color: black;
-   font-size: 16px;
+ background: rgba(63,143,90,1); 
+ background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+ background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+ border: 2px solid rgba(14, 173, 27, 1); 
+ border-radius: 11px; 
+ height: 37px;
+ width: 70%;
+ margin-left: 45px;
+ color: black;
+ font-size: 16px;
  }
 
 .pb {
@@ -115,4 +98,51 @@ html, body{
  background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
  color: black;
  font-size: 16px;
+}
+
+
+
+.button {
+  background: rgba(240, 95, 82, 1 ); 
+  background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+  background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
+  border: 2px solid rgba(10, 9, 9, 1); 
+  border-radius: 11px; 
+  height: 37px;
+  color: black;
+  font-size: 16px;
+}
+
+#pb-text {
+  float: right;
+  font-size: 24px;
+}
+
+.nav-btn-container{
+  float:right;  
+}
+
+.nav-btn{
+  margin-right:10px;
+  top: 20px;
+  position: relative;
+  border-color: #FFB354;
+  color: #3f8f5a;
+}
+
+.nav-btn .btn-text{
+  display: inline-block;
+  position: relative;
+  top: 30%;
+  color: #3f8f5a;
+}
+
+.nav-btn.btn-default{
+  border-width: 2px;
+  border-color: #FFB354;
+  color: #3f8f5a
+}
+
+.results {
+    color: #3f8f5a;
 }

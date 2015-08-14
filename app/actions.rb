@@ -6,21 +6,29 @@ helpers do
 end
 
 get '/', '/index', '/home','/main' do
-  unless current_user
-    @user = User.find(1)
-    session[:user_id] = @user.id
-  end
   erb :'home'
 end
 
+get '/login' do
+  @user = User.find(1)
+  session[:user_id] = @user.id
+  redirect :'home'
+end
+
+get '/logout' do
+  @user = nil
+  session.clear
+  redirect :'home'
+end
+
 get '/expenses' do
-  @expenses = Expense.where(user_id: 1)
+  @expenses = Expense.where(user_id: current_user.id) if current_user
   erb :expenses
 end
 
 post '/expenses/add' do
   @expense = Expense.new(
-    user_id: 1,
+    user_id: current_user.id,
     name: params[:name],
     value: params[:value].to_i,
     interval: params[:interval]
@@ -35,7 +43,7 @@ post '/expenses/delete/:id' do
 end
 
 post '/think-twice/' do
-  @expenses = Expense.where(user_id: 1)
+  @expenses = Expense.where(user_id: current_user.id) if current_user
   if params[:amount].to_i > 0
     @tt = params[:amount]
     erb :'/results'
