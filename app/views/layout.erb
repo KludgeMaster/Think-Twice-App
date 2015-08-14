@@ -13,6 +13,11 @@
   <body>
     <%= erb :'header' %>
       <div id = "tt-container">
+        <% if flash[:errors] %>
+          <div class="alert alert-danger">
+            <%= flash[:errors] %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     <%= erb :'footer' %>

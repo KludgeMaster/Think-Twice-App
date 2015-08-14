@@ -3,6 +3,16 @@ helpers do
   def current_user
     @user = User.find(session[:user_id]) if session[:user_id]
   end
+
+  #for enumerables
+  def make_error_message(errors)
+    message = "Some issues: "
+      if errors.is_a?(Array)
+        message << errors.join(", ") << "."
+      else
+        message << errors.full_messages.join(", ") <<"."
+      end
+  end
 end
 
 get '/', '/index', '/home','/main' do
@@ -33,7 +43,11 @@ post '/expenses/add' do
     value: params[:value].to_i,
     interval: params[:interval]
   )
-  @expense.save
+
+  unless @expense.save
+    flash[:errors] = make_error_message(@expense.errors)
+  end
+  
   redirect '/expenses'
 end
 
@@ -48,6 +62,7 @@ post '/think-twice/' do
     @tt = params[:amount]
     erb :'/results'
   else
+    flash[:errors] = "Sorry but we need a number greater than 0..."
     redirect '/'
   end
 end

@@ -1,6 +1,6 @@
 class Expense < ActiveRecord::Base
-  validates :name, presence: true
-  validates :value, numericality: {only_integer: true, greater_than: 0}
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :value, numericality: {only_integer: true, greater_than: 0, less_than_or_equal_to: 9999999}
   @@MIN_PERCENT = 5
   
   def think_twice(expense_tt)
