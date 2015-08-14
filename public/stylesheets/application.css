@@ -102,7 +102,7 @@ html, body{
 
 
 
-#button {
+.button {
   background: rgba(240, 95, 82, 1 ); 
   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
@@ -119,7 +119,7 @@ html, body{
 }
 
 .nav-btn-container{
-  float:right;
+  float:right;  
 }
 
 .nav-btn{
