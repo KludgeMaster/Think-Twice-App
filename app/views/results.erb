@@ -12,6 +12,6 @@
         <%= think_twice_values[0] %>%
       </div> 
     </div>
-  <div class="col-md-3"><p><%= think_twice_values[0] %>% of your <%= think_twice_values[1] %> <%= expense.name %> budget.</p></div>
+  <div class="col-md-3"><p><%= think_twice_values[0] <= 100 ? "#{think_twice_values[0]}% of" : "#{(think_twice_values[0]/100).round(2)}x" %> your <%= think_twice_values[1] %> <%= expense.name %> budget.</p></div>
 <% end %>
 <div style="clear:both;"></div>
