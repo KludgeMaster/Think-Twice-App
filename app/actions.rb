@@ -10,7 +10,7 @@ get '/', '/index', '/home','/main' do
 end
 
 get '/login' do
-  @user = User.find(1)
+  @user = User.first
   session[:user_id] = @user.id
   redirect :'home'
 end
@@ -22,7 +22,8 @@ get '/logout' do
 end
 
 get '/expenses' do
-  @expenses = Expense.where(user_id: current_user.id) if current_user
+  current_user
+    @expenses = Expense.where(user_id: current_user.id)
   erb :expenses
 end
 
@@ -42,8 +43,12 @@ post '/expenses/delete/:id' do
   redirect '/expenses'
 end
 
-post '/think-twice/' do
-  @expenses = Expense.where(user_id: current_user.id) if current_user
+post '/user_input' do
+  if current_user
+    @expenses = Expense.where(user_id: current_user.id)
+  else
+    @expenses = Expense.where(user_id: 0)
+ end
   if params[:amount].to_i > 0
     @tt = params[:amount]
     erb :'/results'

@@ -1,12 +1,12 @@
 class Expense < ActiveRecord::Base
   validates :name, presence: true
-  validates :value, numericality: {only_integer: true, greater_than: 0}
+  validates :value, numericality: { greater_than: 0}
   @@MIN_PERCENT = 5
   
   def think_twice(expense_tt)
     tt = expense_tt.to_f
     value = self.value.to_f
-    interval = self.interval
+    interval = self.interval.downcase
     result = 0
     times = nil
     temp = {
@@ -45,7 +45,7 @@ class Expense < ActiveRecord::Base
         interval = interv
       end
     end  
-    if self.interval == 'once'
+    if self.interval == 'Once'
       interval = ""
       result = (tt * 100) / self.value.to_f
     end  

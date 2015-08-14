@@ -3,17 +3,24 @@
 <!-- each progress bar will be inside a div with class col-md-07 -->
 <!-- the div with text inside needs the class col-md-03 -->
 <!-- The numbers need to add up to 10 therefore we use col 7 and 3 -->
-<% @expenses.each do |expense| %>
-  <% think_twice_values = expense.think_twice(@tt) %>
-  <div class = "col-md-7">
-    <div class="progress">
-      <div class="progress-bar progress-bar-success pb" role="progressbar" aria-valuenow="5"
-        aria-valuemin="0" aria-valuemax="100" style="width: <%= think_twice_values[0] %>%"> 
+<% if @expenses %>
+  <% @expenses.each do |expense| %>
+    <% think_twice_values = expense.think_twice(@tt) %>
+    <div class = "col-md-7">
+      <div class="progress">
+        <div class="progress-bar progress-bar-success pb" role="progressbar" aria-valuenow="5"
+          aria-valuemin="0" aria-valuemax="100" style="width: <%= think_twice_values[0] %>%"> 
+        </div>
+          <%= think_twice_values[0] %>%
+        </div> 
       </div>
-        <%= think_twice_values[0] %>%
-      </div> 
-    </div>
-  <div class="col-md-3"><p><%= think_twice_values[0] %>% of your <%= think_twice_values[1] %> <%= expense.name %> budget.</p></div>
-<% end %>
+    <div class="col-md-3"><p><%= think_twice_values[0] %>% of your <%= think_twice_values[1] %> <%= expense.name %> budget.</p></div>
+  <% end %>
+<%end%>
 <div style="clear:both;"></div>
->>>>>>> e0b85b4169b6913a4e7ee45d7c8cdb2b4b348a7c
+
+<div>
+  <span class="btn-text">
+    <a href="/">Home</a>
+  </span>
+</div>
