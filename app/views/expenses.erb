@@ -1,4 +1,20 @@
-<h2>Expenses</h2>
+<div id="nav-bar">
+  <div id="profile-image"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=profile&w=80&h=80" />
+  </div>
+  <div class="nav-btn-container">
+    <div class="nav-btn btn btn-default">
+      <span class="btn-text">
+      My Expenses
+      </span>
+    </div>
+    <div class="nav-btn btn btn-danger sign-out">
+      <span class="btn-text">
+      Sign Out
+      </span>
+    </div>
+  </div>  
+</div>
+<h3>My Expenses</h3>
 <form action="post" method="/expenses/add" class="form-horizontal">
   <div class="form-group">
     <label for="inputExpenseName" class="col-sm-2 control-label">Expense</label>
@@ -25,8 +41,7 @@
   </div>
 </form>
 <div class="container">
-  <h2>Your Expenses</h2>
-  <p>Here's a list of your expenses:</p>            
+  <h4>Here's a list of your expenses:</h4>            
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -51,6 +66,17 @@
     <%end%>
   <%end%>
   </table>
+</div>
+<div id="footer">
+  <div class="col-md-2 footer-item label label-default">
+    Legal
+  </div>
+  <div class="col-md-2 footer-item label label-primary">
+    Facebook
+  </div>
+  <div class="col-md-2 footer-item label label-info">
+    Twitter
+  </div>
 </div>
 
 
