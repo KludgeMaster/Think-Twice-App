@@ -16,14 +16,16 @@ ActiveRecord::Schema.define(version: 20150814194633) do
   create_table "expenses", force: :cascade do |t|
     t.integer "user_id"
     t.string  "name"
+    t.string  "category"
     t.decimal "value",    precision: 7, scale: 2
     t.string  "interval"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
+    t.string  "name"
+    t.string  "email"
+    t.string  "password"
+    t.boolean "admin",    default: false
   end
 
 end

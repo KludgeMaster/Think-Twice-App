@@ -223,3 +223,10 @@ li a {
 li:hover { 
   background: #5fa4c5;
 }
+
+.welcome {
+  color: #009ACD;
+  font-size: 20px;
+  font-family: cursive;
+
+}

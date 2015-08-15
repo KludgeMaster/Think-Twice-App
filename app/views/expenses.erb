@@ -1,6 +1,4 @@
-
 <div class="container">
-  <h3>Expenses</h3>
   <form action="/expenses/add" method="post" class="form-horizontal">
     <div class="form-group">
       <label for="inputExpenseName" class="col-sm-2 control-label">Expense</label>
@@ -47,37 +45,36 @@
       <button type="submit" class="btn btn-primary">Add an expense</button>
     </div>
   </div>
+
 </form>
 
 <div class="container">
-  <h4>Here's a list of your expenses:</h4>            
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Expense</th>
-        <th>Value</th>
-        <th>Interval</th>
-        <th class= "col-sm-2">Delete?</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% if @expenses %>
-      
-      <% @expenses.each do |expense| %>
-        <tr>
-          <td><%=expense.name%></td>
-          <td><%=expense.value%></td>
-          <td><%=expense.interval%></td>
-          <td>
-            <form action="/expenses/delete/<%=expense.id%>" method="post">  
-            <input type="submit" class="btn btn-danger" value = "Delete an expense"></input>
-          </td>
-          </form>
-        </tr>
-      <%end%>
-    <%end%>
-    </tbody>
-  </table>
+ <h4>Here's a list of your expenses:</h4>            
+ <table class="table table-bordered">
+   <thead>
+     <tr>
+       <th>Expense</th>
+       <th>Value</th>
+       <th>Interval</th>
+       <th class= "col-sm-2">Delete?</th>
+     </tr>
+   </thead>
+   <tbody>
+   <% if @expenses %>
+     
+     <% @expenses.each do |expense| %>
+       <tr>
+         <td><%=expense.name%></td>
+         <td><%=expense.value%></td>
+         <td><%=expense.interval%></td>
+         <td>
+           <form action="/expenses/delete/<%=expense.id%>" method="post">  
+           <input type="submit" class="btn btn-danger" value = "Delete an expense"></input>
+         </td>
+         </form>
+       </tr>
+     <%end%>
+   <%end%>
+   </tbody>
+ </table>
 </div>
-
-

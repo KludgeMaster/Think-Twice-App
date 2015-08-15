@@ -1,0 +1,21 @@
+<div class="container">
+  <h4>Here's how much other people are spending:</h4>   
+  <% if @stats %>         
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>          
+        <% @stats.each do |stat| %>
+          <tr>
+            <td><%=stat.category%></td>
+            <td><%=stat.avg_value.round(2)%></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  <%end%>
+</div>

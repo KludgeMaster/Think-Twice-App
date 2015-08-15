@@ -71,8 +71,15 @@ end
 
 #Fake login for demo purposes
 get '/login' do
-  @user = User.first
+  @user = User.find(1)
   session[:user_id] = @user.id
+  redirect :'home'
+end
+
+get '/login/admin' do
+  @user = User.where(admin: true).first
+  session[:user_id] = @user.id
+  # binding.pry
   redirect :'home'
 end
 
@@ -83,15 +90,21 @@ get '/logout' do
 end
 
 get '/expenses' do
-  current_user
+  if current_user.admin
+    @stats = Expense.select("category, avg(value) as avg_value").group("category")
+    # binding.pry
+    erb :others
+  else
     @expenses = Expense.where(user_id: current_user.id)
-  erb :expenses
+    erb :expenses
+  end
 end
 
 post '/expenses/add' do
   @expense = Expense.new(
     user_id: current_user.id,
     name: params[:name],
+    category: params[:category],
     value: params[:value].to_f,
     interval: params[:interval]
   )
@@ -110,7 +123,7 @@ post '/expenses/delete/:id' do
   redirect '/expenses'
 end
 
-post '/user_input' do
+post '/results' do
   if current_user
     @expenses = Expense.where(user_id: current_user.id)
   else
@@ -123,4 +136,13 @@ post '/user_input' do
     flash[:errors] = "Sorry but we need a number greater than 0..."
     redirect '/'
   end
+end
+
+# get '/expenses/others' do
+  
+#   erb :'/others'
+# end
+
+get '/results/sponsors' do
+  erb :'/sponsors'
 end
