@@ -36,15 +36,11 @@ helpers do
       elsif percentage >= 25 && percentage < 40
         result = percentage
         interval = interv
+        break
       elsif percentage <25 && percentage > 10  
         result = percentage
         interval = interv
-      elsif percentage >= 200 && percentage <= 300 
-        result = percentage
-        interval = interv
-      elsif percentage < 100
-        result = percentage
-        interval = interv
+        break
       else
         result = percentage
         interval = interv
