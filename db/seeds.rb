@@ -16,3 +16,10 @@ Expense.create!(user_id: 1, name: "Headphone", value: 350, interval: "once")
 Expense.create!(user_id: 1, name: "Beer", value: 40, interval: "weekly")
 Expense.create!(user_id: 1, name: "Phone Bill", value: 100, interval: "monthly")
 
+
+Expense.create!(user_id: 2, name: "Rent", value: 1358, interval: "monthly")
+Expense.create!(user_id: 2, name: "Bus Pass", value: 108, interval: "monthly")
+Expense.create!(user_id: 2, name: "Internet Bill", value: 54, interval: "monthly")
+Expense.create!(user_id: 2, name: "Restaurant", value: 55, interval: "weekly")
+Expense.create!(user_id: 2, name: "Phone Bill", value: 97, interval: "monthly")
+

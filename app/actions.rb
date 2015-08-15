@@ -112,7 +112,7 @@ post '/expenses/delete/:id' do
   redirect '/expenses'
 end
 
-post '/user_input' do
+post '/results' do
   if current_user
     @expenses = Expense.where(user_id: current_user.id)
   else
@@ -125,4 +125,13 @@ post '/user_input' do
     flash[:errors] = "Sorry but we need a number greater than 0..."
     redirect '/'
   end
+end
+
+get '/expenses/others' do
+  @expenses = Expense.where(user_id: 2)
+  erb :'/others'
+end
+
+get '/results/sponsors' do
+  erb :'/sponsors'
 end
