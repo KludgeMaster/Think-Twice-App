@@ -1,22 +1,36 @@
 
-html, body{
+html, body {
    height: 100%;
    width: 100%;
    margin: 0;
    padding: 0;
+   color: #0D0D0D;
 }
 
-#tt-container{
+h3 {
+  color: #009ACD;
+}
+
+h4 {
+  color: white;
+}
+
+#tt-container {
   min-height: 100vh;
 }
 
-.think-twice-values{
+/*.think-twice-values {
   font-weight: bold;
-  font-size:15px;
+  font-size: 15px;
+}*/
 
+#think-twice {
+  color: #009ACD;
+  font-size: 45px;
+  font-family: cursive;
 }
 
-.form-container{
+.form-container {
 /*  background-image: url("http://girlwhothinks.com/wp-content/uploads/2014/03/growth-from-money.jpg");
   background-size: 80%, 20%;
   background-repeat: no-repeat;
@@ -25,49 +39,50 @@ html, body{
   width: 100%;
 }
 
-#home-bg{
+#home-bg {
   width: inherit;
   height: inherit;
   position: absolute;
-  clear:both;
+  clear: both;
 }
 
-#home-form{
+#home-form { 
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width:50%;
+  width: 50%;
 }
 
-#home-form .label-warning{
+#home-form .label-warning {
   top: -10px;
   position: relative;
   font-size: 20px;
-  background-color: #FF8C00;
+  background-color: #0D0D0D;
+  color: #009ACD;
 }
 
 .form-control { 
-  border: 2px solid #FF8C00;
+  border: 2px solid #0D0D0D;
+  width: 75%;
 }
 
-#home-form .btn-primary{
+#home-form .btn-primary {
   top: 5px;
-  position:relative;
+  position: relative;
 }
 
-#footer{
-  /*border-top: 1px solid #3f8f5a;*/
+#footer {
   width: 100%;
-  background-color: #3f8f5a;
-  overflow:hidden;
+  background-color: #0D0D0D;
+  overflow: hidden;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.footer-item{
+.footer-item {
   margin: 5px;
-  display:inline-block;
+  display: inline-block;
   font-size: 15px;
 }
 
@@ -75,55 +90,43 @@ html, body{
   color: white;
 }
 
-#nav-bar{
+#nav-bar {
   height: 100px;
-  border-bottom: 4px solid #3f8f5a;
-  background-color: #3f8f5a;
+  border-bottom: 4px solid #0D0D0D;
+  background-color: #0D0D0D;
   width: 100%;
 }
 
-#nav-bar #profile-image{
+#nav-bar #profile-image {
   height: 80%;
 }
 
-#profile-image img{
+#profile-image img {
   border-radius: 50px;
 }
 
-#nav-bar div{
+#nav-bar div {
   display: inline-block;
   margin: 5px;
 }
 
-.progress {
- background: rgba(63,143,90,1); 
- background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
- background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
- border: 2px solid rgba(14, 173, 27, 1); 
- border-radius: 11px; 
- height: 37px;
- margin-left: 45px;
- color: black;
- font-size: 16px;
+#inputExpenseName {
+  color: #009ACD;
 }
+
+.progress {
+   background: rgba(0,154,205,1); 
+   border: 0px solid rgba(245, 245, 245, 1); 
+   border-radius: 4px; 
+   height: 37px;
+   margin-left: 45px;
+   color: white;
+   font-size: 16px;
+   text-align: center;
+ }
 
 .pb {
-   background: rgba(14, 173, 27, 1); 
-   background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
-   background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
-   color: black;
-   font-size: 16px;
-}
-
-.button {
-  background: rgba(240, 95, 82, 1 ); 
-  background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-  background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-  border: 2px solid rgba(19, 103, 47, 1); 
-  border-radius: 11px; 
-  height: 37px;
-  color: #02290f;
-  font-size: 16px;
+   background: rgba(5, 3, 3, 1);
 }
 
 #pb-text {
@@ -132,7 +135,7 @@ html, body{
 }
 
 .nav-btn-container {
-  float:right;  
+  float: right;  
 }
 
 .nav-btn {
@@ -150,7 +153,7 @@ html, body{
 
 .nav-btn.btn-default {
   border-width: 2px;
-  border-color: #3f8f5a;
+  border-color: #337ab7;
 }
 
 .results {
@@ -158,12 +161,65 @@ html, body{
 }
 
 .table,.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-  border: 3px solid #FF8C00;
+  border: 2px solid #0D0D0D;
+  color: #009ACD;
 }
 
 .table {
   font-size: 16px;
 }
 
-
-
+.col { 
+  background: #0D0D0D;
+  float: left;
+  padding: 30px 0 0 35px;
+  width: 310px;
+  margin-left: 50px;
+}
+ 
+.col:first-child {
+  padding: 30px 0 0 0;
+}
+ 
+h2 { 
+  background: url(extra-title-bg.jpg); 
+  color: #FFF;
+  float: left; 
+  font: bold 18px Arial, Helvetica, sans-serif; 
+  font-variant: small-caps; 
+  margin: 0 0 20px 0; 
+  padding: 9px 0 0 19px; 
+  height: 33px; 
+  width: 291px;
+}
+ 
+ul { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  color: #FFF;
+}
+ 
+li { 
+  background: url(extra-links-bg.jpg); 
+  border-bottom: 1px dotted #009ACD; 
+  border-top: 1px dotted #009ACD; 
+  float: left; 
+  height: 35px; 
+  margin: 3px 0;
+  padding: 0; 
+  width: 310px; 
+}
+ 
+li a { 
+  color: #FFF;
+  display: block;
+  float: left; 
+  font: normal 12px Verdana, Geneva, sans-serif; 
+  padding: 10px 0 0 19px; 
+  text-decoration: none;
+}
+ 
+li:hover { 
+  background: #5fa4c5;
+}
