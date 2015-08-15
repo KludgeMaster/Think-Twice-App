@@ -14,12 +14,13 @@ helpers do
       end
   end
 
+  #Method will return percentage of your purchase compared to your expense, as well as the interval
+  # it corresponds to based upon user experience.    
   def get_tt_values(expense_tt, expense_value, expense_interval)
     tt = expense_tt.to_f
     value = expense_value.to_f
     interval = expense_interval.downcase
     result = 0
-    times = nil
     temp = {
       annual: 365,
       monthly: 30,
@@ -35,8 +36,8 @@ helpers do
       biweekly: (daily_value/14)*100,
       weekly: (daily_value/7)*100,
       daily: (daily_value/1)*100,
-      # once: (daily_value/1)*100
     }
+    #psychological preferences
     values.each do |interv, percentage|
       if percentage >= 40 && percentage <= 60
         result = percentage
@@ -45,15 +46,11 @@ helpers do
       elsif percentage >= 25 && percentage < 40
         result = percentage
         interval = interv
+        break
       elsif percentage <25 && percentage > 10  
         result = percentage
         interval = interv
-      elsif percentage >= 200 && percentage <= 300 
-        result = percentage
-        interval = interv
-      elsif percentage < 100
-        result = percentage
-        interval = interv
+        break
       else
         result = percentage
         interval = interv
@@ -63,7 +60,7 @@ helpers do
       interval = ""
       result = (tt * 100) / expense_value.to_f
     end  
-    [result.round(1),interval,times]
+    [result.round(1),interval]
   end
 
 end
@@ -72,6 +69,7 @@ get '/', '/index', '/home','/main' do
   erb :'home'
 end
 
+#Fake login for demo purposes
 get '/login' do
   @user = User.first
   session[:user_id] = @user.id
