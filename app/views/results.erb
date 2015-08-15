@@ -12,16 +12,19 @@
         <div class="progress-bar progress-bar-success pb" role="progressbar" aria-valuenow="5"
           aria-valuemin="0" aria-valuemax="100" style="width: <%= think_twice_values[0] %>%"> 
         </div>
-          <%= think_twice_values[0] %>%
+         <%= think_twice_values[0] %>%
         </div> 
       </div>
     <div class="col-md-3 think-twice-values"><p><%= think_twice_values[0] <= 100 ? "#{think_twice_values[0]}% of" : "#{(think_twice_values[0]/100).round(2)}x" %> your <%= think_twice_values[1] %> <%= expense.name %> budget.</p></div>
+
   <% end %>
 <% end %>
 
 <div style="clear:both;"></div>
 
+
 <div>
+<!-- <div class="nav-btn btn btn-default"> -->
   <span class="btn-text">
     <a href="/">Home</a>
   </span>
