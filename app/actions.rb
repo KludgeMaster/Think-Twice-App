@@ -4,6 +4,16 @@ helpers do
     @user = User.find(session[:user_id]) if session[:user_id]
   end
 
+  #for enumerables
+  def make_error_message(errors)
+    message = "Some issues: "
+      if errors.is_a?(Array)
+        message << errors.join(", ") << "."
+      else
+        message << errors.full_messages.join(", ") <<"."
+      end
+  end
+
   #Method will return percentage of your purchase compared to your expense, as well as the interval
   # it corresponds to based upon user experience.    
   def get_tt_values(expense_tt, expense_value, expense_interval)
@@ -52,6 +62,7 @@ helpers do
     end  
     [result.round(1),interval]
   end
+
 end
 
 get '/', '/index', '/home','/main' do
@@ -60,7 +71,7 @@ end
 
 #Fake login for demo purposes
 get '/login' do
-  @user = User.find(1)
+  @user = User.first
   session[:user_id] = @user.id
   redirect :'home'
 end
@@ -72,7 +83,8 @@ get '/logout' do
 end
 
 get '/expenses' do
-  @expenses = Expense.where(user_id: current_user.id) if current_user
+  current_user
+    @expenses = Expense.where(user_id: current_user.id)
   erb :expenses
 end
 
@@ -80,10 +92,16 @@ post '/expenses/add' do
   @expense = Expense.new(
     user_id: current_user.id,
     name: params[:name],
-    value: params[:value].to_i,
+    value: params[:value].to_f,
     interval: params[:interval]
   )
-  @expense.save
+
+  if @expense.save
+    flash[:success] = "#{@expense.name} added!"
+  else
+    flash[:errors] = make_error_message(@expense.errors)
+  end
+  
   redirect '/expenses'
 end
 
@@ -92,12 +110,17 @@ post '/expenses/delete/:id' do
   redirect '/expenses'
 end
 
-post '/think-twice/' do
-  @expenses = Expense.where(user_id: current_user.id) if current_user
+post '/user_input' do
+  if current_user
+    @expenses = Expense.where(user_id: current_user.id)
+  else
+    @expenses = Expense.where(user_id: 0)
+ end
   if params[:amount].to_i > 0
-    @tt = params[:amount].to_f
+    @tt = params[:amount]
     erb :'/results'
   else
+    flash[:errors] = "Sorry but we need a number greater than 0..."
     redirect '/'
   end
 end
