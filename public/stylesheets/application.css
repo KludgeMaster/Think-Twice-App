@@ -6,14 +6,9 @@ html, body{
    padding: 0;
 }
 
+
 #tt-container{
   min-height: 100vh;
-}
-
-.think-twice-values{
-  font-weight: bold;
-  font-size:15px;
-
 }
 
 .form-container{
@@ -44,11 +39,6 @@ html, body{
   top: -10px;
   position: relative;
   font-size: 20px;
-  background-color: #FF8C00;
-}
-
-.form-control { 
-  border: 2px solid #FF8C00;
 }
 
 #home-form .btn-primary{
@@ -57,12 +47,10 @@ html, body{
 }
 
 #footer{
-  /*border-top: 1px solid #3f8f5a;*/
+  border-top: 4px solid #7887AB;
   width: 100%;
+  height: 10px;
   background-color: #3f8f5a;
-  overflow:hidden;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .footer-item{
@@ -73,7 +61,7 @@ html, body{
 
 #nav-bar{
   height: 100px;
-  border-bottom: 4px solid #3f8f5a;
+  border-bottom: 4px solid #7887AB;
   background-color: #3f8f5a;
   width: 100%;
 }
@@ -98,37 +86,31 @@ html, body{
  border: 2px solid rgba(14, 173, 27, 1); 
  border-radius: 11px; 
  height: 37px;
+ width: 70%;
  margin-left: 45px;
+ color: black;
+ font-size: 16px;
+ }
+
+.pb {
+ background: rgba(14, 173, 27, 1); 
+ background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
+ background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
  color: black;
  font-size: 16px;
 }
 
-.pb {
-   background: rgba(14, 173, 27, 1); 
-   background: -webkit-linear-gradient(top, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%); 
-   background: linear-gradient(to bottom, rgba(4, 110, 25, 1) 0%, rgba(14, 173, 27, 1) 100%);
-   color: black;
-   font-size: 16px;
-}
+
 
 .button {
   background: rgba(240, 95, 82, 1 ); 
   background: -webkit-linear-gradient(top, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
   background: linear-gradient(to bottom, rgba(194, 103, 80, 1) 0%, rgba(212, 181, 78, 1) 100%); 
-  border: 2px solid rgba(19, 103, 47, 1); 
+  border: 2px solid rgba(10, 9, 9, 1); 
   border-radius: 11px; 
   height: 37px;
-  color: #02290f;
+  color: black;
   font-size: 16px;
-}
-
-.nav-btn.btn-default a {
-  color: #FF8C00;
-}
-
-.nav-btn.btn-default{
-  text-shadow: 0 1 px 0 #FF8C00;
-  background-color: red;
 }
 
 #pb-text {
@@ -144,31 +126,23 @@ html, body{
   margin-right:10px;
   top: 20px;
   position: relative;
+  border-color: #FFB354;
+  color: #3f8f5a;
 }
 
 .nav-btn .btn-text{
   display: inline-block;
   position: relative;
   top: 30%;
-  color: #3F8F5A;
+  color: #3f8f5a;
 }
 
 .nav-btn.btn-default{
   border-width: 2px;
-  border-color: #FF8C00;
+  border-color: #FFB354;
+  color: #3f8f5a
 }
 
 .results {
-    color: #7887AB;
+    color: #3f8f5a;
 }
-
-.table,.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-  border: 3px solid #FF8C00;
-}
-
-.table {
-  font-size: 16px;
-}
-
-
-
