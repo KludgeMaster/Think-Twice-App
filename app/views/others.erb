@@ -1,24 +1,22 @@
 <div class="container">
-  <h4>Here's how much other people are spending:</h4>            
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Expense</th>
-        <th>Value</th>
-        <th>Interval</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% if @expenses %>
-      
-      <% @expenses.each do |expense| %>
+  <h4>Here's how much other people are spending:</h4>   
+  <% if @stats %>         
+    <table class="table table-bordered">
+      <thead>
         <tr>
-          <td><%=expense.name%></td>
-          <td><%=(expense.value*0.8).to_i%></td>
-          <td><%=expense.interval%></td>
+          <th>Catergory</th>
+          <th>Value</th>
+          
         </tr>
-      <%end%>
-    <%end%>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>          
+        <% @stats.each do |stat| %>
+          <tr>
+            <td><%=stat.category%></td>
+            <td><%=stat.avg_value.round(2)%></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  <%end%>
 </div>

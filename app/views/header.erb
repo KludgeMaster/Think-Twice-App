@@ -11,18 +11,29 @@
     </div>
     <div class="nav-btn btn btn-default">
       <span class="btn-text">
-        <a href='/expenses'>My Expenses</a>
+        <%if current_user.admin %>
+          <a href='/expenses'>Stats</a>
+        <%else%>
+          <a href='/expenses'>My Expenses</a>
+        <%end%>
       </span>
     </div>
-  <%end%>
-  <div class="nav-btn btn btn-default">
+    <div class="nav-btn btn btn-default">
      <span class="btn-text">
-     <%if current_user %>
         <a href="/logout">Sign Out</a>
-      <%else%>
-        <a href="/login">Sign In</a>
-      <%end%>
      </span>
-  </div>
+    </div>
+  <%else%>
+    <div class="nav-btn btn btn-default">
+      <span class="btn-text">
+        <a href='/login/admin'>Sign in As Admin</a>
+      </span>
+    </div>
+    <div class="nav-btn btn btn-default">
+     <span class="btn-text">
+        <a href="/login">Sign In</a>
+     </span>
+    </div>
+  <%end%>
   </div>
 </div>
