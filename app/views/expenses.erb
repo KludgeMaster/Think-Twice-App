@@ -1,3 +1,4 @@
+<h3>My Expenses</h3>
 <div class="container">
   <form action="/expenses/add" method="post" class="form-horizontal">
     <div class="form-group">
@@ -30,6 +31,7 @@
       <label for="interval" class="col-sm-2 control-label">Interval</label>
       <div class="col-sm-10">
         <select class="form-control" name="interval" id="interval">
+          <option value="" disabled selected>Select an interval period</option>
           <option>Once</option>
           <option>Daily</option>
           <option>Weekly</option>

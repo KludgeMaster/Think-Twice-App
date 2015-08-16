@@ -93,7 +93,7 @@ get '/expenses' do
   if current_user.admin
     @stats = Expense.select("category, avg(value) as avg_value").group("category")
     # binding.pry
-    erb :others
+    erb :stats
   else
     @expenses = Expense.where(user_id: current_user.id)
     erb :expenses
@@ -143,6 +143,3 @@ end
 #   erb :'/others'
 # end
 
-get '/results/sponsors' do
-  erb :'/sponsors'
-end
