@@ -17,7 +17,7 @@ h4 {
 }
 
 #tt-container {
-  min-height: 100vh;
+  min-height: 100vh;]
 }
 
 .form-container {
@@ -98,18 +98,21 @@ h4 {
 
 /*progress bar on results page*/
 .progress {
-   background: rgba(0,154,205,1); 
+   /*background: rgba(0,154,205,1);*/ 
+   background: rgba(245, 245, 245, 1);
    border: 2px solid rgba(0,154,205,1); 
    border-radius: 14px; 
    height: 37px;
    margin-left: 45px;
-   color: white;
+   /*color: white;*/
+   color: #009ACD;
    font-size: 16px;
    text-align: center;
  }
 
 .pb {
    background: rgba(245, 245, 245, 1);
+   background: rgba(0,154,205,1);
 }
 
 #pb-text {
